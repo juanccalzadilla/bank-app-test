@@ -14,7 +14,7 @@ function RootLayoutContent() {
   return (
     <>
       <StatusBar style="dark" />
-      <SafeAreaView style={{ flex: 1, backgroundColor: theme.color.background }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: theme.color.background }} edges={["top"]}>
         <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen name="(tabs)/home" />
         </Stack>

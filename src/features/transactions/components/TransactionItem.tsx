@@ -3,17 +3,26 @@ import { useTheme } from "@/theme/ThemeProvider";
 import { Image, View } from "react-native";
 import { MoveDownLeft } from "lucide-react-native";
 
-export default function TransactionItem() {
+import { Transaction } from "../types/Transaction";
+
+type TransactionItemProps = {
+  item: Transaction;
+};
+
+export default function TransactionItem({ item }: TransactionItemProps) {
   const theme = useTheme();
   return (
     <View
-      className="flex-row justify-between w-100 items-center"
+      className="flex-row justify-between w-full items-center"
       style={{ marginTop: theme.spacing.xl }}
     >
       <View className="flex-row" style={{ gap: theme.spacing.lg }}>
         <View className="items-center" style={{ marginTop: theme.spacing.sm }}>
           <Image
-            source={{ uri: "https://placehold.co/100.png" }}
+            source={{
+              uri: item.label.imageUrl + "c=1idLm15T5xFSK35Gp0X",
+              cache: "force-cache",
+            }}
             style={{
               width: theme.spacing.lg,
               height: theme.spacing.lg,
@@ -36,7 +45,7 @@ export default function TransactionItem() {
       </View>
 
       <View style={{ alignItems: "flex-end" }}>
-        <AppText>-15.99€</AppText>
+        <AppText>15.99€</AppText>
         <AppText variant="caption" color="muted">
           Completed
         </AppText>
