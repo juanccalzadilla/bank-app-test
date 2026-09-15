@@ -34,7 +34,7 @@ export default function TransactionItem({ item }: TransactionItemProps) {
             {item.label.imageUrl && (
               <Image
                 source={{
-                  uri: item.label.imageUrl + "?c=1idLm15T5xFSK35Gp0X",
+                  uri: `${item.label.imageUrl}?c=${process.env.EXPO_PUBLIC_BRANDFETCH_API_KEY}`,
                 }}
                 style={{
                   width: theme.spacing.lg,
