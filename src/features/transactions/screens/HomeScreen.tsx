@@ -4,9 +4,13 @@ import { useTheme } from "@/theme/ThemeProvider";
 import TransactionItem from "../components/TransactionItem";
 import { FlashList } from "@shopify/flash-list";
 import { Zap } from "lucide-react-native";
+import { useFetchTransactionsQuery } from "../queries/query.keys";
+import { RefreshControl } from "react-native";
 
 export default function HomeScreen() {
   const theme = useTheme();
+
+  const { data, refetch, isRefetching } = useFetchTransactionsQuery();
   return (
     <AppView
       style={{
@@ -18,6 +22,12 @@ export default function HomeScreen() {
     >
       <FlashList
         className="w-full"
+        refreshControl={
+          <RefreshControl
+            refreshing={isRefetching}
+            onRefresh={() => refetch()}
+          />
+        }
         ListHeaderComponent={
           <>
             <AppText
@@ -40,9 +50,9 @@ export default function HomeScreen() {
           </>
         }
         contentContainerStyle={{ paddingBottom: 0, paddingHorizontal: 0 }}
-        data={Array.from({ length: 10 }, (_, i) => i)}
+        data={data?.items}
         showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => <TransactionItem key={item} />}
+        renderItem={({ item }) => <TransactionItem item={item} />}
       />
     </AppView>
   );

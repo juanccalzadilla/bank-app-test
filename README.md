@@ -5,3 +5,20 @@ Definir el porque del design system
 Documentar flash list
 
 Documentar el uso de zod 
+
+
+Documentar uso de queryClient porque  usamos refetch window a false
+
+
+Uso de expo-image
+
+
+Explicar porque hice mapping de la respuesta 
+
+
+pendiente hacer theming de componentes
+
+
+api de imagenes en el .env
+
+añadir tema oscuro al theming

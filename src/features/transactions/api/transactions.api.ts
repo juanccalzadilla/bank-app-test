@@ -1,6 +1,8 @@
-import { TransactionWrapper, TransactionWrapperSchema } from "../types/Transaction";
+import {
+  TransactionWrapper,
+  TransactionWrapperSchema,
+} from "../types/Transaction";
 import mockData from "./transactions.mock.json";
-
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
