@@ -19,7 +19,6 @@ export default function TransactionList() {
     fetchNextPage,
     hasNextPage,
     isFetchingNextPage,
-    isFetchNextPageError,
     isError,
   } = useFetchTransactionsQuery();
 

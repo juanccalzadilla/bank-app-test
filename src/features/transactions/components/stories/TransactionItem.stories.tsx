@@ -2,9 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { View } from 'react-native';
 import { TransactionItem, TransactionItemSkeleton } from '../TransactionItem';
-import type { Transaction } from '../../types/Transaction';
-
-// ─── Fixtures ────────────────────────────────────────────────────────────────
+import type { Transaction } from '../../types/Transaction.ts';
 
 const outboundCompleted: Transaction = {
   id: 'txn-001',
@@ -109,7 +107,6 @@ export const NoImage: Story = {
   args: { item: inboundCompleted },
 };
 
-// Lista realista con varios estados mezclados
 export const ListaSample: Story = {
   name: 'Lista — muestra realista',
   render: () => (
