@@ -6,6 +6,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { queryClient } from "@/shared/api/queryClient";
+import { useEffect } from "react";
 
 import { QueryClientProvider } from "@tanstack/react-query";
 
@@ -13,6 +14,10 @@ SplashScreen.preventAutoHideAsync();
 
 function RootLayoutContent() {
   const theme = useTheme();
+
+  useEffect(() => {
+    SplashScreen.hideAsync();
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

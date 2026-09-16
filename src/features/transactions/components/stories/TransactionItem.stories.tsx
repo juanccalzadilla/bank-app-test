@@ -108,7 +108,7 @@ export const NoImage: Story = {
 };
 
 export const ListaSample: Story = {
-  name: 'Lista — muestra realista',
+  name: 'Lista  muestra realista',
   render: () => (
     <View>
       <TransactionItem item={inboundCompleted} />
