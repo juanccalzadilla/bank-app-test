@@ -34,8 +34,8 @@
       "id": "txn-004",
       "type": "outbound",
       "status": "completed",
-      "amount": { "value": -9.99, "currency": "EUR" },
-      "label": { "name": "Spotify", "imageUrl": "https://cdn.brandfetch.io/domain/spotify.com" },
+      "amount": { "value": -59.99, "currency": "EUR" },
+      "label": { "name": "Spotify - Membresía anual - Promoción 43455X9084L", "imageUrl": "https://cdn.brandfetch.io/domain/spotify.com" },
       "category": "Suscripciones",
       "created_at": "2026-09-10T00:00:00.000Z",
       "flagged": false
@@ -99,6 +99,206 @@
       "category": "Impuestos",
       "created_at": "2026-09-03T10:00:00.000Z",
       "flagged": true
+    },
+    {
+      "id": "txn-011",
+      "type": "outbound",
+      "status": "completed",
+      "amount": { "value": -28.50, "currency": "EUR" },
+      "label": { "name": "Zara", "imageUrl": "https://cdn.brandfetch.io/domain/zara.com" },
+      "category": "Ropa",
+      "created_at": "2026-08-30T17:00:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-012",
+      "type": "outbound",
+      "status": "completed",
+      "amount": { "value": -9.99, "currency": "EUR" },
+      "label": { "name": "Apple Music", "imageUrl": "https://cdn.brandfetch.io/domain/apple.com" },
+      "category": "Suscripciones",
+      "created_at": "2026-08-28T00:00:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-013",
+      "type": "inbound",
+      "status": "completed",
+      "amount": { "value": 500.00, "currency": "EUR" },
+      "label": { "name": "Devolución Hacienda", "imageUrl": null },
+      "category": "Impuestos",
+      "created_at": "2026-08-25T09:00:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-014",
+      "type": "outbound",
+      "status": "completed",
+      "amount": { "value": -74.30, "currency": "EUR" },
+      "label": { "name": "El Corte Inglés", "imageUrl": "https://cdn.brandfetch.io/domain/elcorteingles.es" },
+      "category": "Compras",
+      "created_at": "2026-08-22T12:15:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-015",
+      "type": "outbound",
+      "status": "pending",
+      "amount": { "value": -120.00, "currency": "EUR" },
+      "label": { "name": "Vodafone", "imageUrl": "https://cdn.brandfetch.io/domain/vodafone.com" },
+      "category": "Telecomunicaciones",
+      "created_at": "2026-08-20T08:30:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-016",
+      "type": "outbound",
+      "status": "completed",
+      "amount": { "value": -55.00, "currency": "EUR" },
+      "label": { "name": "Farmacia Central", "imageUrl": null },
+      "category": "Salud",
+      "created_at": "2026-08-18T10:45:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-017",
+      "type": "inbound",
+      "status": "completed",
+      "amount": { "value": 2400.00, "currency": "EUR" },
+      "label": { "name": "Nómina Empresa S.L.", "imageUrl": null },
+      "category": "Nómina",
+      "created_at": "2026-08-01T08:00:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-018",
+      "type": "outbound",
+      "status": "completed",
+      "amount": { "value": -18.90, "currency": "EUR" },
+      "label": { "name": "Glovo", "imageUrl": "https://cdn.brandfetch.io/domain/glovoapp.com" },
+      "category": "Restauración",
+      "created_at": "2026-08-15T21:00:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-019",
+      "type": "outbound",
+      "status": "completed",
+      "amount": { "value": -650.00, "currency": "EUR" },
+      "label": { "name": "Alquiler Agosto", "imageUrl": null },
+      "category": "Vivienda",
+      "created_at": "2026-08-05T09:00:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-020",
+      "type": "outbound",
+      "status": "completed",
+      "amount": { "value": -46.80, "currency": "EUR" },
+      "label": { "name": "Lidl", "imageUrl": "https://cdn.brandfetch.io/domain/lidl.com" },
+      "category": "Supermercado",
+      "created_at": "2026-08-12T19:30:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-021",
+      "type": "outbound",
+      "status": "completed",
+      "amount": { "value": -230.00, "currency": "EUR" },
+      "label": { "name": "Iberdrola", "imageUrl": "https://cdn.brandfetch.io/domain/iberdrola.com" },
+      "category": "Suministros",
+      "created_at": "2026-08-10T10:00:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-022",
+      "type": "outbound",
+      "status": "completed",
+      "amount": { "value": -14.99, "currency": "EUR" },
+      "label": { "name": "Disney+", "imageUrl": "https://cdn.brandfetch.io/domain/disneyplus.com" },
+      "category": "Suscripciones",
+      "created_at": "2026-08-08T00:00:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-023",
+      "type": "inbound",
+      "status": "completed",
+      "amount": { "value": 80.00, "currency": "EUR" },
+      "label": { "name": "Transferencia María López", "imageUrl": null },
+      "category": "Transferencia",
+      "created_at": "2026-08-07T16:20:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-024",
+      "type": "outbound",
+      "status": "completed",
+      "amount": { "value": -38.60, "currency": "EUR" },
+      "label": { "name": "Renfe", "imageUrl": "https://cdn.brandfetch.io/domain/renfe.com" },
+      "category": "Transporte",
+      "created_at": "2026-08-06T07:15:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-025",
+      "type": "outbound",
+      "status": "pending",
+      "amount": { "value": -995.00, "currency": "EUR" },
+      "label": { "name": "MediaMarkt", "imageUrl": "https://cdn.brandfetch.io/domain/mediamarkt.de" },
+      "category": "Electrónica",
+      "created_at": "2026-08-04T14:00:00.000Z",
+      "flagged": true
+    },
+    {
+      "id": "txn-026",
+      "type": "outbound",
+      "status": "completed",
+      "amount": { "value": -22.00, "currency": "EUR" },
+      "label": { "name": "Parking Centro", "imageUrl": null },
+      "category": "Transporte",
+      "created_at": "2026-08-03T11:00:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-027",
+      "type": "outbound",
+      "status": "completed",
+      "amount": { "value": -67.40, "currency": "EUR" },
+      "label": { "name": "Decathlon", "imageUrl": "https://cdn.brandfetch.io/domain/decathlon.com" },
+      "category": "Deporte",
+      "created_at": "2026-07-29T10:30:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-028",
+      "type": "outbound",
+      "status": "completed",
+      "amount": { "value": -310.00, "currency": "EUR" },
+      "label": { "name": "Seguro Coche Mapfre", "imageUrl": "https://cdn.brandfetch.io/domain/mapfre.com" },
+      "category": "Seguros",
+      "created_at": "2026-07-25T09:00:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-029",
+      "type": "inbound",
+      "status": "completed",
+      "amount": { "value": 250.00, "currency": "EUR" },
+      "label": { "name": "Freelance Diseño Web", "imageUrl": null },
+      "category": "Ingresos extra",
+      "created_at": "2026-07-20T15:00:00.000Z",
+      "flagged": false
+    },
+    {
+      "id": "txn-030",
+      "type": "outbound",
+      "status": "completed",
+      "amount": { "value": -53.10, "currency": "EUR" },
+      "label": { "name": "Carrefour", "imageUrl": "https://cdn.brandfetch.io/domain/carrefour.com" },
+      "category": "Supermercado",
+      "created_at": "2026-07-18T18:00:00.000Z",
+      "flagged": false
     }
   ],
   "nextCursor": null

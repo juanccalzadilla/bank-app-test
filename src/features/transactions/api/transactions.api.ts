@@ -4,12 +4,26 @@ import {
 } from "../types/Transaction";
 import mockData from "./transactions.mock.json";
 
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
 export const transactionsApi = {
-  getTransactions: async (): Promise<TransactionWrapper> => {
-    await delay(500);
+  getTransactions: async ({
+    cursor,
+    limit = 10,
+  }: {
+    cursor?: string;
+    limit?: number;
+  }): Promise<TransactionWrapper> => {
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
-    return TransactionWrapperSchema.parse(mockData);
+    const startIndex = cursor ? Number(cursor.replace('cursor_', '')) : 0;
+
+    const items = mockData.items.slice(startIndex, startIndex + limit);
+
+    const nextIndex = startIndex + items.length;
+
+    return TransactionWrapperSchema.parse({
+      items,
+      nextCursor:
+        nextIndex < mockData.items.length ? `cursor_${nextIndex}` : undefined,
+    });
   },
 };

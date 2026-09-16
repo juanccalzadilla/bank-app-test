@@ -6,27 +6,33 @@ import { Transaction } from "../types/Transaction";
 import { Image } from "expo-image";
 import { isInbound, statusFormatter } from "../helpers/transaction.helpers";
 import { amountFormatter, shortDateFormatter } from "@/shared/helpers";
+import { AppSkeleton } from "@/shared/components/AppSkeleton";
 
 type TransactionItemProps = {
   item: Transaction;
 };
 
-export default function TransactionItem({ item }: TransactionItemProps) {
+export function TransactionItem({ item }: TransactionItemProps) {
   const theme = useTheme();
   return (
     <View
-      className="flex-row justify-between w-full items-center"
-      style={{ marginTop: theme.spacing.xl }}
+      className="flex-row justify-between items-center"
+      style={{ marginTop: theme.spacing.xl, width: '100%' }}
     >
-      <View className="flex-row items-center">
+      <View className="flex-row items-center" style={{ flex: 1 }}>
         {item.flagged && (
           <View
-            className="w-3 h-3 rounded-full mr-3"
-            style={{ backgroundColor: theme.color.important }}
+            style={{
+              backgroundColor: theme.color.important,
+              width: theme.spacing.sm,
+              height: theme.spacing.sm,
+              borderRadius: theme.radius.full,
+              marginRight: theme.spacing.sm,
+            }}
           />
         )}
 
-        <View className="flex-row" style={{ gap: theme.spacing.lg }}>
+        <View className="flex-row" style={{ gap: theme.spacing.lg, flex: 1 }}>
           <View
             className="items-center"
             style={{ marginTop: theme.spacing.sm }}
@@ -42,7 +48,7 @@ export default function TransactionItem({ item }: TransactionItemProps) {
                   borderRadius: theme.radius.full,
                   marginBottom: theme.spacing.xs,
                 }}
-                contentFit="contain"
+                contentFit="fill"
                 transition={200}
               />
             )}
@@ -54,12 +60,12 @@ export default function TransactionItem({ item }: TransactionItemProps) {
             )}
           </View>
 
-          <View>
-            <AppText variant="body">{item.label.name}</AppText>
+          <View style={{ flex: 1 }}>
+            <AppText variant="body" numberOfLines={1}>{item.label.name}</AppText>
             <AppText variant="caption" color="muted">
               {shortDateFormatter(item.created_at)}
             </AppText>
-            <AppText variant="caption" color="muted">
+            <AppText variant="caption" color="muted" numberOfLines={1}>
               {item.category}
             </AppText>
           </View>
@@ -67,12 +73,53 @@ export default function TransactionItem({ item }: TransactionItemProps) {
       </View>
 
       <View style={{ alignItems: "flex-end" }}>
-        <AppText>
+        <AppText variant="subheading">
           {amountFormatter(item.amount.value, item.amount.currency)}
         </AppText>
         <AppText variant="caption" color="muted">
           {statusFormatter(item)}
         </AppText>
+      </View>
+    </View>
+  );
+}
+
+
+
+export function TransactionItemSkeleton() {
+  const theme = useTheme();
+
+  return (
+    <View
+      className="flex-row justify-between items-center"
+      style={{ marginTop: theme.spacing.xl, width: "100%" }}
+    >
+      <View className="flex-row items-center" style={{ flex: 1 }}>
+        <View className="flex-row" style={{ gap: theme.spacing.lg, flex: 1 }}>
+          <View
+            className="items-center"
+            style={{ marginTop: theme.spacing.sm, gap: theme.spacing.xs }}
+          >
+            <AppSkeleton
+              width={theme.spacing.lg}
+              height={theme.spacing.lg}
+              borderRadius={theme.radius.full}
+            />
+            <AppSkeleton width={24} height={24} borderRadius={4} />
+          </View>
+
+         
+          <View style={{ flex: 1, gap: theme.spacing.xs, justifyContent: "center" }}>
+            <AppSkeleton width="60%" height={14} borderRadius={4} />
+            <AppSkeleton width="40%" height={12} borderRadius={4} />
+            <AppSkeleton width="50%" height={12} borderRadius={4} />
+          </View>
+        </View>
+      </View>
+
+      <View style={{ alignItems: "flex-end", gap: theme.spacing.xs }}>
+        <AppSkeleton width={72} height={14} borderRadius={4} />
+        <AppSkeleton width={48} height={12} borderRadius={4} />
       </View>
     </View>
   );

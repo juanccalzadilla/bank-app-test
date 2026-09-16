@@ -20,7 +20,7 @@ const Transaction = z
 
 const TransactionWrapper = z.object({
   items: z.array(Transaction),
-  nextCursor: z.string().nullable(),
+  nextCursor: z.string().nullish(),
 });
 
 export {

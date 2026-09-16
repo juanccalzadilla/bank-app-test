@@ -3,14 +3,16 @@ import { useMemo } from 'react';
 import { useTheme } from '@/theme/ThemeProvider';
 import type { TypographyVariant, TextColorKey } from '@/theme/theme';
 
-interface AppTextProps extends TextProps {
+interface AppTextProps extends Omit<TextProps, 'numberOfLines'>  {
   variant?: TypographyVariant;
-  color?: TextColorKey; // 'default' | 'muted' | 'inverse'
+  color?: TextColorKey;
+  numberOfLines?: number | null;
 }
 
 export function AppText({
   variant = 'body',
   color = 'default',
+  numberOfLines = null,
   style,
   ...props
 }: AppTextProps) {
@@ -18,6 +20,7 @@ export function AppText({
 
   const variantStyle = useMemo(() => {
     const t = theme.typography[variant];
+
     return StyleSheet.create({
       text: {
         fontSize: t.fontSize,
@@ -28,5 +31,11 @@ export function AppText({
     }).text;
   }, [theme, variant, color]);
 
-  return <Text style={[variantStyle, style]} {...props} />;
+  return (
+    <Text
+      style={[variantStyle, style]}
+      numberOfLines={numberOfLines ?? undefined}
+      {...props}
+    />
+  );
 }

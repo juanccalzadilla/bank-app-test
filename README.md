@@ -1,24 +1,33 @@
 Definir el porque del design system
- - Lo hice desde 0 porque es una app sencilla pero para una app mas profesional existen opciones como Restyle de shopify que tiene una mejor estructura. También es verdad que pense en usar nativeWind para este proyecto pero, queria ceñirme a los requerimientos y usar los datos provinientes de un JSON.
- - Aunque para cosas que no son colores tamaño de texto o border-radius podemos usar nativewind para evitar escribir tanto styles por el codigo que al final lo ensucian
+
+- Lo hice desde 0 porque es una app sencilla pero para una app mas profesional existen opciones como Restyle de shopify que tiene una mejor estructura. También es verdad que pense en usar nativeWind para este proyecto pero, queria ceñirme a los requerimientos y usar los datos provinientes de un JSON.
+- Aunque para cosas que no son colores tamaño de texto o border-radius podemos usar nativewind para evitar escribir tanto styles por el codigo que al final lo ensucian
 
 Documentar flash list
 
-Documentar el uso de zod 
+Documentar el uso de zod
 
-
-Documentar uso de queryClient porque  usamos refetch window a false
-
+Documentar uso de queryClient porque usamos refetch window a false
 
 Uso de expo-image
 
+Explicar porque hice mapping de la respuesta
+Documentar porque hacer mejor los componentes que depender de paquetes externos cuando no son ncesarios
 
-Explicar porque hice mapping de la respuesta 
+Pendientes:
 
+Tema
 
-pendiente hacer theming de componentes
+1. Renombrar tokens a surface, surfaceContainer, onSurface, secondary etc.
+2. Theming de componentes
+3. Añadir tema oscuro al theming
+4. Storybook
 
+Logica
 
-api de imagenes en el .env
-
-añadir tema oscuro al theming
+3. Skeleton hecho
+1. Paginación hecho
+1. Tal vez repositorio para cambiar facilmente de datasource
+1. Pensar que pasa cuando falla un endpoint porque la validación de un item no fue ok
+1. Documentar componente
+1. Mirar que todo esta bien y limpio mejor
