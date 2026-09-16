@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { View } from 'react-native';
-import { AppText } from './AppText';
+import { AppText } from '../AppText';
 
 const meta: Meta<typeof AppText> = {
   title: 'Shared/AppText',

@@ -2,7 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Search } from 'lucide-react-native';
-import AppButton from './AppButton';
+import AppButton from '../AppButton';
 
 const meta: Meta<typeof AppButton> = {
   title: 'Shared/AppButton',

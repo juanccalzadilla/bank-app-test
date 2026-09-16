@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { View } from 'react-native';
-import { TransactionItem, TransactionItemSkeleton } from './TransactionItem';
-import type { Transaction } from '../types/Transaction';
+import { TransactionItem, TransactionItemSkeleton } from '../TransactionItem';
+import type { Transaction } from '../../types/Transaction';
 
 // ─── Fixtures ────────────────────────────────────────────────────────────────
 

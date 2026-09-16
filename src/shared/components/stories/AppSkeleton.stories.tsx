@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { View } from 'react-native';
-import { AppSkeleton } from './AppSkeleton';
+import { AppSkeleton } from '../AppSkeleton';
 
 const meta: Meta<typeof AppSkeleton> = {
   title: 'Shared/AppSkeleton',

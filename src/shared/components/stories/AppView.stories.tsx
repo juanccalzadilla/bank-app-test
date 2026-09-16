@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import AppView from './AppView';
-import { AppText } from './AppText';
+import AppView from '../AppView';
+import { AppText } from '../AppText';
 
 const meta: Meta<typeof AppView> = {
   title: 'Shared/AppView',
