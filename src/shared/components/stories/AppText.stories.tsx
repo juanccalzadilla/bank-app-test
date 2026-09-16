@@ -16,7 +16,7 @@ const meta: Meta<typeof AppText> = {
     },
     color: {
       control: 'select',
-      options: ['onSurface', 'onSurfaceVariant', 'primary', 'onDanger', 'onPrimary'],
+      options: ['onSurface', 'onSurfaceVariant', 'primary', 'onError', 'onPrimary'],
     },
     children: { control: 'text' },
   },
@@ -49,7 +49,7 @@ export const Colors: Story = {
       <AppText color="onSurface">onSurface (por defecto)</AppText>
       <AppText color="onSurfaceVariant">onSurfaceVariant</AppText>
       <AppText color="primary">primary</AppText>
-      <AppText color="danger">danger</AppText>
+      <AppText color="error">error</AppText>
       <AppText color="success">success</AppText>
     </View>
   ),

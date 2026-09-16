@@ -23,7 +23,7 @@ export function TransactionItem({ item }: TransactionItemProps) {
         {item.flagged && (
           <View
             style={{
-              backgroundColor: theme.color.important,
+              backgroundColor: theme.color.warning,
               width: theme.spacing.sm,
               height: theme.spacing.sm,
               borderRadius: theme.radius.full,
@@ -56,7 +56,7 @@ export function TransactionItem({ item }: TransactionItemProps) {
             {isInbound(item) ? (
               <MoveDownLeft color={theme.color.success} />
             ) : (
-              <MoveUpRight color={theme.color.danger} />
+              <MoveUpRight color={theme.color.error} />
             )}
           </View>
 
