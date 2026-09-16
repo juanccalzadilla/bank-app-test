@@ -31,3 +31,4 @@ Logica
 1. Pensar que pasa cuando falla un endpoint porque la validación de un item no fue ok
 1. Documentar componente
 1. Mirar que todo esta bien y limpio mejor
+1. Ver lo de tanstackquery cuando vuelves a la app se refresque.

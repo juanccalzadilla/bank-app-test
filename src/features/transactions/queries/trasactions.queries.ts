@@ -10,13 +10,7 @@ export function useFetchTransactionsQuery() {
         cursor: pageParam,
       });
 
-      return {
-        ...data,
-        items: data.items.sort(
-          (a, b) =>
-            new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
-        ),
-      };
+      return data;
     },
     initialPageParam: undefined as string | undefined,
     getNextPageParam: (lastPage) => lastPage.nextCursor,

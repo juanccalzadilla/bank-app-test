@@ -16,7 +16,7 @@ function RootLayoutContent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <StatusBar style="dark" />
+      <StatusBar style="auto" />
       <SafeAreaView
         style={{ flex: 1, backgroundColor: theme.color.background }}
         edges={["top"]}

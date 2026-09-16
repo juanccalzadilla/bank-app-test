@@ -17,7 +17,7 @@ export function TransactionItem({ item }: TransactionItemProps) {
   return (
     <View
       className="flex-row justify-between items-center"
-      style={{ marginTop: theme.spacing.xl, width: '100%' }}
+      style={{ marginTop: theme.spacing.xl, width: "100%" }}
     >
       <View className="flex-row items-center" style={{ flex: 1 }}>
         {item.flagged && (
@@ -56,16 +56,22 @@ export function TransactionItem({ item }: TransactionItemProps) {
             {isInbound(item) ? (
               <MoveDownLeft color={theme.color.success} />
             ) : (
-              <MoveUpRight />
+              <MoveUpRight color={theme.color.danger} />
             )}
           </View>
 
           <View style={{ flex: 1 }}>
-            <AppText variant="body" numberOfLines={1}>{item.label.name}</AppText>
+            <AppText variant="body" numberOfLines={1}>
+              {item.label.name}
+            </AppText>
             <AppText variant="caption" color="onSurfaceVariant">
               {shortDateFormatter(item.created_at)}
             </AppText>
-            <AppText variant="caption" color="onSurfaceVariant" numberOfLines={1}>
+            <AppText
+              variant="caption"
+              color="onSurfaceVariant"
+              numberOfLines={1}
+            >
               {item.category}
             </AppText>
           </View>
@@ -83,8 +89,6 @@ export function TransactionItem({ item }: TransactionItemProps) {
     </View>
   );
 }
-
-
 
 export function TransactionItemSkeleton() {
   const theme = useTheme();
@@ -108,8 +112,9 @@ export function TransactionItemSkeleton() {
             <AppSkeleton width={24} height={24} borderRadius={4} />
           </View>
 
-         
-          <View style={{ flex: 1, gap: theme.spacing.xs, justifyContent: "center" }}>
+          <View
+            style={{ flex: 1, gap: theme.spacing.xs, justifyContent: "center" }}
+          >
             <AppSkeleton width="60%" height={14} borderRadius={4} />
             <AppSkeleton width="40%" height={12} borderRadius={4} />
             <AppSkeleton width="50%" height={12} borderRadius={4} />

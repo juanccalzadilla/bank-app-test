@@ -14,9 +14,14 @@ export const transactionsApi = {
   }): Promise<TransactionWrapper> => {
     await new Promise((resolve) => setTimeout(resolve, 500));
 
-    const startIndex = cursor ? Number(cursor.replace('cursor_', '')) : 0;
+    const startIndex = cursor ? Number(cursor.replace("cursor_", "")) : 0;
 
-    const items = mockData.items.slice(startIndex, startIndex + limit);
+    const items = mockData.items
+      .slice(startIndex, startIndex + limit)
+      .sort(
+        (a, b) =>
+          new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
+      );
 
     const nextIndex = startIndex + items.length;
 
