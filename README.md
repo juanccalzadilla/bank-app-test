@@ -2,11 +2,30 @@
 
 Lista de transacciones bancarias en React Native + Expo.
 
+## Requisitos
+
+- Node 18+
+- Expo Go en el dispositivo, o simulador iOS/Android
+
+## Versiones principales
+
+| Paquete | Versión |
+|---------|---------|
+| React Native | 0.86.3 |
+| React | 19.2.3 |
+| Expo | 57.0.22 |
+| Expo Router | 57.0.21 |
+| TypeScript | 6.0.3 |
+| React Query | 5.102.8 |
+| Zod | 4.6.5 |
+| FlashList | 2.0.2 |
+| Reanimated | 4.5.1 |
+
 ## Arrancar
 
 ```bash
 npm install
-npm run ios       # o android
+npx expo start --ios  # o android
 ```
 
 Storybook:
