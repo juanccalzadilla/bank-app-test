@@ -21,7 +21,7 @@ Tema
 1. Renombrar tokens a surface, surfaceContainer, onSurface, secondary etc. OK
 3. Añadir tema oscuro al theming OK
 2. Theming de componentes Opcional
-4. Storybook
+4. Storybook ok
 
 Logica
 
@@ -30,5 +30,6 @@ Logica
 1. Tal vez repositorio para cambiar facilmente de datasource No es necesario en esta app
 1. Pensar que pasa cuando falla un endpoint porque la validación de un item no fue -> Ver el error 
 1. Documentar componente
-1. Mirar que todo esta bien y limpio mejor
+1. Mirar que todo esta bien y limpio mejor OK
 1. Ver lo de tanstackquery cuando vuelves a la app se refresque.
+2. Si la imagen da error comprobar que se queda un placeholder

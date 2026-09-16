@@ -42,7 +42,9 @@
     "@storybook/react": "^8.6.18",
     "@storybook/react-native": "^8.6.4",
     "@tailwindcss/postcss": "^4.3.3",
+    "@types/jest": "^30.0.0",
     "@types/react": "~19.2.2",
+    "jest-expo": "^57.0.5",
     "postcss": "^8.5.28",
     "tailwindcss": "^4.3.3",
     "typescript": "~6.0.3"
@@ -54,10 +56,22 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "expo lint",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "storybook": "EXPO_PUBLIC_STORYBOOK=true expo start",
     "storybook:ios": "EXPO_PUBLIC_STORYBOOK=true expo start --ios",
     "storybook:android": "EXPO_PUBLIC_STORYBOOK=true expo start --android",
     "storybook:web": "EXPO_PUBLIC_STORYBOOK=true expo start --web"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "testMatch": [
+      "**/__tests__/**/*.test.ts",
+      "**/__tests__/**/*.test.tsx"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    }
   },
   "private": true,
   "overrides": {
