@@ -62,10 +62,10 @@ export function TransactionItem({ item }: TransactionItemProps) {
 
           <View style={{ flex: 1 }}>
             <AppText variant="body" numberOfLines={1}>{item.label.name}</AppText>
-            <AppText variant="caption" color="muted">
+            <AppText variant="caption" color="onSurfaceVariant">
               {shortDateFormatter(item.created_at)}
             </AppText>
-            <AppText variant="caption" color="muted" numberOfLines={1}>
+            <AppText variant="caption" color="onSurfaceVariant" numberOfLines={1}>
               {item.category}
             </AppText>
           </View>
@@ -76,7 +76,7 @@ export function TransactionItem({ item }: TransactionItemProps) {
         <AppText variant="subheading">
           {amountFormatter(item.amount.value, item.amount.currency)}
         </AppText>
-        <AppText variant="caption" color="muted">
+        <AppText variant="caption" color="onSurfaceVariant">
           {statusFormatter(item)}
         </AppText>
       </View>

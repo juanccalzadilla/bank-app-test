@@ -18,9 +18,9 @@ Pendientes:
 
 Tema
 
-1. Renombrar tokens a surface, surfaceContainer, onSurface, secondary etc.
+1. Renombrar tokens a surface, surfaceContainer, onSurface, secondary etc. OK
+3. Añadir tema oscuro al theming OK
 2. Theming de componentes
-3. Añadir tema oscuro al theming
 4. Storybook
 
 Logica

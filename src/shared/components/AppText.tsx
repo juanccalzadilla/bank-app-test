@@ -1,17 +1,17 @@
 import { Text, TextProps, TextStyle, StyleSheet } from 'react-native';
 import { useMemo } from 'react';
 import { useTheme } from '@/theme/ThemeProvider';
-import type { TypographyVariant, TextColorKey } from '@/theme/theme';
+import type { TypographyVariant, FlatColorKey } from '@/theme/theme';
 
-interface AppTextProps extends Omit<TextProps, 'numberOfLines'>  {
+interface AppTextProps extends Omit<TextProps, 'numberOfLines'> {
   variant?: TypographyVariant;
-  color?: TextColorKey;
+  color?: FlatColorKey;
   numberOfLines?: number | null;
 }
 
 export function AppText({
   variant = 'body',
-  color = 'default',
+  color = 'onSurface',
   numberOfLines = null,
   style,
   ...props
@@ -26,7 +26,7 @@ export function AppText({
         fontSize: t.fontSize,
         lineHeight: t.lineHeight,
         fontWeight: t.fontWeight as TextStyle['fontWeight'],
-        color: theme.color.text[color],
+        color: theme.color[color],
       },
     }).text;
   }, [theme, variant, color]);
