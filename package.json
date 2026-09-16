@@ -1,9 +1,10 @@
 {
   "name": "kutxabank-app-test",
-  "main": "expo-router/entry",
+  "main": "index.js",
   "version": "1.0.0",
   "dependencies": {
     "@expo/ui": "~57.0.18",
+    "@react-native-async-storage/async-storage": "2.2.0",
     "@shopify/flash-list": "2.0.2",
     "@tanstack/react-query": "^5.102.8",
     "expo": "~57.0.22",
@@ -34,6 +35,12 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
+    "@gorhom/bottom-sheet": "^5.2.14",
+    "@storybook/addon-ondevice-actions": "^8.6.4",
+    "@storybook/addon-ondevice-backgrounds": "^8.6.4",
+    "@storybook/addon-ondevice-controls": "^8.6.4",
+    "@storybook/react": "^8.6.18",
+    "@storybook/react-native": "^8.6.4",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/react": "~19.2.2",
     "postcss": "^8.5.28",
@@ -46,7 +53,11 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "storybook": "EXPO_PUBLIC_STORYBOOK=true expo start",
+    "storybook:ios": "EXPO_PUBLIC_STORYBOOK=true expo start --ios",
+    "storybook:android": "EXPO_PUBLIC_STORYBOOK=true expo start --android",
+    "storybook:web": "EXPO_PUBLIC_STORYBOOK=true expo start --web"
   },
   "private": true,
   "overrides": {

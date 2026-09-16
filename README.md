@@ -20,7 +20,7 @@ Tema
 
 1. Renombrar tokens a surface, surfaceContainer, onSurface, secondary etc. OK
 3. Añadir tema oscuro al theming OK
-2. Theming de componentes
+2. Theming de componentes Opcional
 4. Storybook
 
 Logica

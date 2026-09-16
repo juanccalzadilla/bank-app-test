@@ -90,18 +90,16 @@ export default function AppButton({
   );
 
   const styledIcon =
-    icon && isValidElement(icon)
+    icon && isValidElement<{ color?: string; size?: number }>(icon)
       ? cloneElement(icon, { color: iconColor, size: icon.props.size ?? 20 })
       : null;
 
   return (
     <Pressable
       disabled={isDisabled}
-      style={({ pressed }) => [
-        styles.container,
-        pressed && !isDisabled && { opacity: 0.7 },
-        style,
-      ]}
+      style={({ pressed }) =>
+        [styles.container, pressed && !isDisabled && { opacity: 0.7 }, style] as any
+      }
       {...props}
     >
       <View style={styles.inner}>
