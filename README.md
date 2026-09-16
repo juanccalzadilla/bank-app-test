@@ -1,35 +1,91 @@
-Definir el porque del design system
+# Kutxabank App — Technical Test
 
-- Lo hice desde 0 porque es una app sencilla pero para una app mas profesional existen opciones como Restyle de shopify que tiene una mejor estructura. También es verdad que pense en usar nativeWind para este proyecto pero, queria ceñirme a los requerimientos y usar los datos provinientes de un JSON.
-- Aunque para cosas que no son colores tamaño de texto o border-radius podemos usar nativewind para evitar escribir tanto styles por el codigo que al final lo ensucian
+Lista de transacciones bancarias en React Native + Expo.
 
-Documentar flash list
+## Arrancar
 
-Documentar el uso de zod
+```bash
+npm install
+npm run ios       # o android
+```
 
-Documentar uso de queryClient porque usamos refetch window a false
+Storybook:
 
-Uso de expo-image
+```bash
+npm run storybook:ios    # o :android
+```
 
-Explicar porque hice mapping de la respuesta
-Documentar porque hacer mejor los componentes que depender de paquetes externos cuando no son ncesarios
+Tests:
 
-Pendientes:
+```bash
+npm test
+```
 
-Tema
+---
 
-1. Renombrar tokens a surface, surfaceContainer, onSurface, secondary etc. OK
-3. Añadir tema oscuro al theming OK
-2. Theming de componentes Opcional
-4. Storybook ok
+## Estructura
 
-Logica
+```
+src/
+  features/
+    transactions/   # API, componentes, queries, tipos — todo junto
+  shared/
+    components/     # AppText, AppButton, AppSkeleton…
+    helpers/        # formateo de fechas y moneda
+    api/            # queryClient
+  theme/            # tokens.json → ThemeProvider → useTheme()
+  app/              # rutas (expo-router)
+```
 
-3. Skeleton hecho
-1. Paginación hecho
-1. Tal vez repositorio para cambiar facilmente de datasource No es necesario en esta app
-1. Pensar que pasa cuando falla un endpoint porque la validación de un item no fue -> Ver el error 
-1. Documentar componente
-1. Mirar que todo esta bien y limpio mejor OK
-1. Ver lo de tanstackquery cuando vuelves a la app se refresque.
-2. Si la imagen da error comprobar que se queda un placeholder
+Organización por feature, no por tipo de archivo. Si hay un cambio en transacciones, todo lo relevante está en el mismo sitio. Añadir un módulo nuevo es una carpeta en `features/` sin tocar nada existente.
+
+---
+
+## Stack y decisiones
+
+| Qué | Elegido | Por qué |
+|-----|---------|---------|
+| Design system | Custom + `tokens.json` | El contrato era el JSON — los tokens pasan por `ThemeProvider` y `useTheme()` devuelve el tema tipado. Sin valores hardcodeados. |
+| Validación | Zod | TypeScript solo valida en compilación. Zod valida en runtime, convierte tipos (`z.coerce.date()`) y deriva los tipos con `z.infer` — una sola fuente de verdad. |
+| Mock de API | JSON estático | La firma de `transactionsApi` es idéntica a la que usaría con `fetch()` real. Cambiar de mock a producción es una línea. |
+| Cache | React Query | `staleTime: 5min` + `refetchOnWindowFocus: false`. En mobile el usuario cambia de app constantemente — el pull-to-refresh le da el control. |
+| Paginación | Cursor-based | Con offset/page, inserciones concurrentes generan duplicados o items perdidos. El cursor apunta a una posición estable. |
+| Lista | FlashList | FlatList tiene blank flashing en listas largas. FlashList recicla las vistas más agresivamente. |
+| Carga | Skeleton | Muestra la estructura antes de que lleguen los datos — menos layout shift que un spinner. |
+| Imágenes | expo-image | Cachea en disco (SDWebImage / Glide). El `Image` nativo recarga de red cada vez que el logo vuelve al viewport. |
+| Storybook | On-device | Los componentes RN solo existen en el runtime nativo. Storybook web renderizaría en DOM — un componente diferente al de producción. |
+
+---
+
+## Componente y estados
+
+`TransactionItem` cubre todos los estados del enunciado:
+
+- **Inbound / Outbound** — icono y color diferente según el tipo
+- **Completed / Pending** — mostrado en el label de estado
+- **Flagged** — punto de color para llamar la atención
+- **Label largo** — `numberOfLines={1}` con truncado
+- **Sin imagen** — el icono de dirección hace de fallback
+- **Skeleton** — animación con Reanimated mientras cargan los datos
+
+Todos los estados están documentados en Storybook.
+
+---
+
+## Tests
+
+```bash
+npm test
+npm run test:watch
+npm test -- --coverage
+```
+
+| Qué | Por qué |
+|-----|---------|
+| Schema (Zod) | Valida el contrato — campos requeridos, tipos incorrectos, mapping de campos |
+| Helpers de dominio | `isInbound`, `statusFormatter`… lógica que puede romperse silenciosamente |
+| Helpers de presentación | Formateo de moneda y fechas con `Intl` |
+
+No hay tests de snapshot de componentes visuales — se rompen con cualquier cambio de diseño y no detectan bugs reales.
+
+**E2E:** elegiría Maestro sobre Detox para Expo (no necesita instrumentación nativa). Caso principal: abrir la app → lista carga → scroll al final → se carga la siguiente página.
