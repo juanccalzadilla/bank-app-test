@@ -11,7 +11,7 @@ interface AppTextProps extends Omit<TextProps, 'numberOfLines'> {
 
 export function AppText({
   variant = 'body',
-  color = 'onSurface',
+  color = 'onBackground',
   numberOfLines = null,
   style,
   ...props
