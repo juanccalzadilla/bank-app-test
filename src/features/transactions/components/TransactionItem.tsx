@@ -8,11 +8,13 @@ import { isInbound, statusFormatter } from "../helpers/transaction.helpers";
 import { amountFormatter, shortDateFormatter } from "@/shared/helpers";
 import { AppSkeleton } from "@/shared/components/AppSkeleton";
 
+import {memo} from "react";
+
 type TransactionItemProps = {
   item: Transaction;
 };
 
-export function TransactionItem({ item }: TransactionItemProps) {
+export const TransactionItem = memo( function TransactionItem({ item }: TransactionItemProps) {
   const theme = useTheme();
   return (
     <View
@@ -88,7 +90,7 @@ export function TransactionItem({ item }: TransactionItemProps) {
       </View>
     </View>
   );
-}
+});
 
 export function TransactionItemSkeleton() {
   const theme = useTheme();

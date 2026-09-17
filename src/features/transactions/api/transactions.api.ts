@@ -12,7 +12,7 @@ export const transactionsApi = {
     cursor?: string;
     limit?: number;
   }): Promise<TransactionWrapper> => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     const startIndex = cursor ? Number(cursor.replace("cursor_", "")) : 0;
 
