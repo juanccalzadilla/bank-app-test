@@ -105,6 +105,3 @@ npm test -- --coverage
 | Helpers de dominio | `isInbound`, `statusFormatter`… lógica que puede romperse silenciosamente |
 | Helpers de presentación | Formateo de moneda y fechas con `Intl` |
 
-No hay tests de snapshot de componentes visuales — se rompen con cualquier cambio de diseño y no detectan bugs reales.
-
-**E2E:** elegiría Maestro sobre Detox para Expo (no necesita instrumentación nativa). Caso principal: abrir la app → lista carga → scroll al final → se carga la siguiente página.
