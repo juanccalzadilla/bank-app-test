@@ -5,12 +5,16 @@ import { TransactionItem, TransactionItemSkeleton } from "./TransactionItem";
 import { Transaction } from "../types/Transaction";
 import { useFetchTransactionsQuery } from "../queries/trasactions.queries";
 import TransactionListError from "./TransactionListError";
+import { useQueryClient } from "@tanstack/react-query";
+import { transactionsQueryKeys } from "../queries/query.keys";
 
 const skeletons = Array.from({ length: 8 }, (_, i) => ({
   id: `skeleton-${i}`,
 }));
 
 export default function TransactionList() {
+  const queryClient = useQueryClient();
+
   const {
     data,
     refetch,
@@ -21,6 +25,13 @@ export default function TransactionList() {
     isFetchingNextPage,
     isError,
   } = useFetchTransactionsQuery();
+
+  const onPullToRefresh = async () => {
+    await queryClient.resetQueries({
+      queryKey: transactionsQueryKeys.list(),
+      exact: true,
+    });
+  };
 
   const showInitialError = isError && !data;
   return (
@@ -42,7 +53,7 @@ export default function TransactionList() {
         )
       }
       refreshControl={
-        <RefreshControl refreshing={isRefetching} onRefresh={() => refetch()} />
+        <RefreshControl refreshing={isRefetching} onRefresh={onPullToRefresh} />
       }
       ListHeaderComponent={TransactionListHeader}
       ListEmptyComponent={
