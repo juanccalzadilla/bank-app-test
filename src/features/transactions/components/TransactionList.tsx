@@ -27,9 +27,10 @@ export default function TransactionList() {
   } = useFetchTransactionsQuery();
 
   const onPullToRefresh = async () => {
+    //Sino se recargan todas las pagina y matria el performnce
     await queryClient.resetQueries({
       queryKey: transactionsQueryKeys.list(),
-      exact: true,
+      exact: true, 
     });
   };
 
